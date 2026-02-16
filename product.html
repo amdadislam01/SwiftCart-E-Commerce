@@ -137,6 +137,31 @@
         >
           <!-- All Product -->
         </div>
+        <!-- Modal -->
+        <div
+          id="product-modal"
+          class="fixed inset-0 z-50 hidden overflow-y-auto"
+        >
+          <div
+            class="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity"
+            onclick="closeModal()"
+          ></div>
+
+          <div class="flex items-center justify-center min-h-screen p-4">
+            <div
+              class="relative bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transform transition-all"
+            >
+              <button
+                onclick="closeModal()"
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10"
+              >
+                <i class="fa-solid fa-circle-xmark text-2xl"></i>
+              </button>
+
+              <div id="modal-content" class="p-6 md:p-8"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
