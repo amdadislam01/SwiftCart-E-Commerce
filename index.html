@@ -67,6 +67,7 @@
               <i class="fa-solid fa-cart-shopping text-xl"></i>
               <!-- Cart Badge -->
               <span
+                id="cart-count"
                 class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold"
               >
                 0
@@ -114,6 +115,42 @@
         </div>
       </div>
     </nav>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 z-50 hidden">
+      <div class="fixed inset-0 bg-black/50" onclick="toggleCart()"></div>
+      <div
+        class="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-xl p-6 overflow-y-auto"
+      >
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold">Your Cart</h2>
+          <button
+            onclick="toggleCart()"
+            class="text-gray-500 hover:text-black text-2xl"
+          >
+            &times;
+          </button>
+        </div>
+        <div id="cart-items" class="space-y-4"></div>
+        <div class="border-t border-t-gray-300 mt-6 pt-6">
+          <div class="flex justify-between text-xl font-bold mb-6">
+            <span>Total:</span>
+            <span id="cart-total">$0.00</span>
+          </div>
+          <button
+            class="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700"
+          >
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Message -->
+    <div
+      id="toast-container"
+      class="fixed top-10 right-5 z-[100] flex flex-col gap-3"
+    ></div>
 
     <!-- Banner -->
     <section
